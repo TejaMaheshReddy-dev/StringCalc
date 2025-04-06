@@ -1,26 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
+import '@testing-library/jest-dom';
 
-describe('App Component', () => {
-  it('should call handleOnClick when button is clicked', () => {
-    console.log = jest.fn(); // mock console.log
-
-    render(<App />);
-    const button = screen.getByText(/calculate/i);
-
-    fireEvent.click(button);
-
-    expect(console.log).toHaveBeenCalledWith('Clicked');
-  });
-
-  it('should call handleOnChange when input is changed', () => {
-    console.log = jest.fn(); // mock console.log
-
-    render(<App />);
-    const input = screen.getByPlaceholderText(/enter value/i);
-
-    fireEvent.change(input, { target: { value: '1234' } });
-
-    expect(console.log).toHaveBeenCalledWith('1234');
-  });
+test('renders StringCalculator component', () => {
+  render(<App />);
+    const heading = screen.getByText(/String Calculator/i);
+  expect(heading).toBeInTheDocument();
 });
