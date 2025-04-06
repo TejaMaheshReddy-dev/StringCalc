@@ -41,4 +41,16 @@ describe('StringCalculator component test cases', () => {
 
     expect(screen.getByText('Calculated Value: 3')).toBeInTheDocument();
   });
+
+  test('error when input has negative numbers', () => {
+    render(<StringCalculator />);
+
+    const textarea = screen.getByPlaceholderText('Enter value ...');
+    const button = screen.getByText('Calculate');
+
+    fireEvent.change(textarea, { target: { value: '5,-2,3' } });
+    fireEvent.click(button);
+
+    expect(screen.getByText('Negative numbers not allowed: -2')).toBeInTheDocument();
+  });
 });
