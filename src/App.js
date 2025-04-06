@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <div className="card">  
         <h2>String Calculator</h2>    
-        <input  type="text" className="custom-input" placeholder="Enter value ..." onChange={(event)=>handleOnChange(event)}/>  
+        <textarea  type="text" className="custom-input" placeholder="Enter value ..." rows={5} onChange={(event)=>handleOnChange(event)}/>  
         <button className="custom-btn" onClick={handleOnClick}>Calculate</button>  
       </div>
     </div>
