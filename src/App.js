@@ -1,20 +1,11 @@
-import './App.css';
+import "./App.css";
+import StringCalculator from "./StringCalculator/string-calculator"
 
 function App() {
-  const handleOnClick=()=>{
-    console.log("Clicked")
-  }
-  const handleOnChange=(event)=>{
-    const stringValue=event.target.value
-    console.log(stringValue)
-  }
+
   return (
     <div className="App">
-      <div className="card">  
-        <h2>String Calculator</h2>    
-        <input  type="text" className="custom-input" placeholder="Enter value ..." onChange={(event)=>handleOnChange(event)}/>  
-        <button className="custom-btn" onClick={handleOnClick}>Calculate</button>  
-      </div>
+      <StringCalculator/>
     </div>
   );
 }
