@@ -22,7 +22,7 @@ function useStringCalcHook() {
     const stringValue = event.target.value;
     setStringValue(stringValue);
     setCalculatedValue(0);
-    setError("")
+    setError("");
   };
   return {
     error,
