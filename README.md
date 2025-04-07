@@ -1,4 +1,12 @@
+clone the app using 
+
+### `git clone <URL>`
+
 In the project directory, you can run:
+
+### `npm install`
+
+The above command install the node modules required.\
 
 ### `npm start`
 
