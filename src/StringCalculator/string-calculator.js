@@ -1,9 +1,10 @@
-import React from "react"
+import React from "react";
 import useStringCalcHook from "./hook";
-import "./string-calculator.css"
+import "./string-calculator.css";
 
 function StringCalculator() {
-  const { error,calculatedValue, handleOnChange, handleOnClick } = useStringCalcHook();
+  const { error, calculatedValue, handleOnChange, handleOnClick } =
+    useStringCalcHook();
   return (
     <div className="card">
       <h2>String Calculator</h2>
@@ -17,7 +18,11 @@ function StringCalculator() {
       <button className="custom-btn" onClick={handleOnClick}>
         Calculate
       </button>
-      {error===""?<h3>Calculated Value: {calculatedValue}</h3>:<h3>{error}</h3>}
+      {error === "" ? (
+        <h3>Calculated Value: {calculatedValue}</h3>
+      ) : (
+        <h3 className="error">{error}</h3>
+      )}
     </div>
   );
 }
